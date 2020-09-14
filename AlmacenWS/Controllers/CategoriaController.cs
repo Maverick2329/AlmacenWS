@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using AlmacenWS.Models;
 using AlmacenWS.Models.Response;
 using AlmacenWS.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AlmacenWS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CategoriaController : ControllerBase
     {
         [HttpGet]
@@ -63,7 +65,7 @@ namespace AlmacenWS.Controllers
             Respuesta respuesta = new Respuesta();
             try
             {
-                using(Almacen_dbContext db = new Almacen_dbContext())
+                using (Almacen_dbContext db = new Almacen_dbContext())
                 {
                     Categoria categoria = db.Categoria.Find(Categoria.IdCategoria);
                     categoria.NombreCategoria = Categoria.NombreCategoria;

@@ -1,7 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using AlmacenWS.Models.Common;
+using AlmacenWS.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace AlmacenWS
 {
@@ -33,10 +38,36 @@ namespace AlmacenWS
                                     {
                                         builder.WithHeaders("*");
                                         builder.WithOrigins("*");
+                                        builder.WithMethods("*");
                                     });
             });
 
             services.AddControllers();
+
+            var appSettingSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingSection);
+
+            //JWT
+            var appSettings = appSettingSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secreto);
+            services.AddAuthentication(a =>
+            {
+                a.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                a.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer( n =>
+            {
+                n.RequireHttpsMetadata = false;
+                n.SaveToken = true;
+                n.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+
+            services.AddScoped<IUsuarioServicio, UsuarioServicio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +83,8 @@ namespace AlmacenWS
             app.UseRouting();
 
             app.UseCors(Cors);
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

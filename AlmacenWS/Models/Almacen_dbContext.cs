@@ -17,13 +17,14 @@ namespace AlmacenWS.Models
 
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-L5AHUMH\\SQLEXPRESS;DataBase=Almacen_db;Trusted_Connection=True;User=sa;Password=maverick#23");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-L5AHUMH\\SQLEXPRESS;Database=Almacen_db;Trusted_Connection=True; User=sa; Password=maverick#23");
             }
         }
 
@@ -97,6 +98,32 @@ namespace AlmacenWS.Models
                     .HasForeignKey(d => d.IdCategoria)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Producto__id_cat__38996AB5");
+            });
+
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.HasKey(e => e.IdUsuario)
+                    .HasName("PK__Usuario__4E3E04AD2DF526BB");
+
+                entity.Property(e => e.IdUsuario).HasColumnName("id_usuario");
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasColumnName("email")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasColumnName("nombre")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasColumnName("password")
+                    .HasMaxLength(150)
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);
