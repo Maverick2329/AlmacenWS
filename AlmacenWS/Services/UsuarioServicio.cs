@@ -49,7 +49,7 @@ namespace AlmacenWS.Services
                         new Claim(ClaimTypes.NameIdentifier,usuario.IdUsuario.ToString()),
                         new Claim(ClaimTypes.Email,usuario.Email)
                     }),
-                Expires = DateTime.UtcNow.AddMinutes(30),
+                Expires = DateTime.UtcNow.AddMinutes(10),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
