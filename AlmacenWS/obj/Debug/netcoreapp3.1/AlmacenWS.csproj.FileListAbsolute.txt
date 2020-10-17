@@ -48,7 +48,6 @@ C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\run
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\AlmacenWS.csprojAssemblyReference.cache
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\AlmacenWS.AssemblyInfoInputs.cache
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\AlmacenWS.AssemblyInfo.cs
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\AlmacenWS.csproj.CoreCompileInputs.cache

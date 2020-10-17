@@ -82,7 +82,7 @@ namespace AlmacenWS.Controllers
             return Ok(respuesta);
         }
 
-        [HttpDelete]
+        [HttpDelete("{Id}")]
         public IActionResult Delete(int Id)
         {
             Respuesta respuesta = new Respuesta();
