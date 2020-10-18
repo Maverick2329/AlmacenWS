@@ -19,7 +19,7 @@ namespace AlmacenWS.Controllers
         {
             _usuarioServicio = usuarioServicio;
         }
-            
+
         [HttpPost("login")]
         public IActionResult Autenticacion([FromBody] Autenticacion autenticacion)
         {
