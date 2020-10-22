@@ -68,6 +68,7 @@ namespace AlmacenWS
             });
 
             services.AddScoped<IUsuarioServicio, UsuarioServicio>();
+            services.AddScoped<IVentaServicio, VentaServicio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
