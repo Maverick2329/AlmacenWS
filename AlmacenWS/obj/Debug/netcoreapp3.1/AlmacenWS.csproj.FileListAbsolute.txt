@@ -1,6 +1,5 @@
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\AlmacenWS.exe
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\AlmacenWS.deps.json
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\bin\Debug\netcoreapp3.1\AlmacenWS.runtimeconfig.json
@@ -59,3 +58,5 @@ C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\sta
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\AlmacenWS.dll
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\AlmacenWS.pdb
 C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\AlmacenWS.genruntimeconfig.cache
+C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\AlmacenWS.csprojAssemblyReference.cache
+C:\Development\BackEnd\AlmacenWS\AlmacenWS\AlmacenWS\obj\Debug\netcoreapp3.1\scopedcss\bundle\AlmacenWS.styles.css
